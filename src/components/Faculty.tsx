@@ -1,4 +1,5 @@
 import { Card } from "@/components/ui/card";
+import { Link } from "react-router-dom";
 import faculty1 from "@/assets/faculty-1.jpg";
 import faculty2 from "@/assets/faculty-2.jpg";
 import faculty3 from "@/assets/faculty-3.jpg";
@@ -8,6 +9,7 @@ import { GraduationCap } from "lucide-react";
 const Faculty = () => {
   const facultyMembers = [
     {
+      id: "1",
       name: "Dr. Rajesh Kumar",
       subject: "Mathematics & Physics",
       qualification: "Ph.D. in Mathematics, IIT Delhi",
@@ -15,6 +17,7 @@ const Faculty = () => {
       image: faculty1,
     },
     {
+      id: "2",
       name: "Prof. Priya Sharma",
       subject: "Chemistry & Biology",
       qualification: "M.Sc. in Chemistry, Delhi University",
@@ -22,6 +25,7 @@ const Faculty = () => {
       image: faculty2,
     },
     {
+      id: "3",
       name: "Dr. Anil Verma",
       subject: "English & Social Science",
       qualification: "Ph.D. in English Literature",
@@ -29,6 +33,7 @@ const Faculty = () => {
       image: faculty3,
     },
     {
+      id: "4",
       name: "Mrs. Sunita Reddy",
       subject: "Computer Science",
       qualification: "M.Tech in Computer Science",
@@ -55,26 +60,33 @@ const Faculty = () => {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {facultyMembers.map((member, index) => (
-            <Card 
+            <Link 
               key={index}
-              className="overflow-hidden hover:shadow-lg transition-all duration-300 border-border hover:border-primary/20 group"
-              style={{ boxShadow: "var(--shadow-card)" }}
+              to={`/faculty/${member.id}`}
+              className="block"
             >
-              <div className="relative overflow-hidden">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-secondary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </div>
-              <div className="p-6 space-y-3">
-                <h3 className="text-xl font-bold">{member.name}</h3>
-                <p className="text-primary font-medium">{member.subject}</p>
-                <p className="text-sm text-muted-foreground">{member.qualification}</p>
-                <p className="text-sm text-muted-foreground font-medium">{member.experience}</p>
-              </div>
-            </Card>
+              <Card 
+                className="overflow-hidden hover:shadow-lg transition-all duration-300 border-border hover:border-primary/20 group cursor-pointer"
+                style={{ boxShadow: "var(--shadow-card)" }}
+              >
+                <div className="relative overflow-hidden">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-secondary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <span className="text-secondary-foreground font-semibold text-lg">View Profile</span>
+                  </div>
+                </div>
+                <div className="p-6 space-y-3">
+                  <h3 className="text-xl font-bold">{member.name}</h3>
+                  <p className="text-primary font-medium">{member.subject}</p>
+                  <p className="text-sm text-muted-foreground">{member.qualification}</p>
+                  <p className="text-sm text-muted-foreground font-medium">{member.experience}</p>
+                </div>
+              </Card>
+            </Link>
           ))}
         </div>
       </div>
