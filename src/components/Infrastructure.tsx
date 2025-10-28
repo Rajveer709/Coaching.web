@@ -68,7 +68,7 @@ const Infrastructure = () => {
           className="text-center mb-12"
         >
           <h2 className="text-4xl font-bold mb-4">Our World-Class Infrastructure</h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             We provide state-of-the-art facilities designed to enhance the learning experience and foster academic excellence.
           </p>
         </motion.div>
@@ -90,7 +90,7 @@ const Infrastructure = () => {
                   <CardTitle className="text-xl">{facility.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground">{facility.description}</p>
+                  <p className="text-gray-600 dark:text-gray-300">{facility.description}</p>
                 </CardContent>
               </Card>
             </motion.div>
