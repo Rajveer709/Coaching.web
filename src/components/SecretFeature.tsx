@@ -40,7 +40,7 @@ const SecretFeature = () => {
           onClick={() => setIsOpen(true)}
         >
           <Lock className="h-5 w-5 mr-2 group-hover:scale-110 transition-transform" />
-          Secret Feature
+          Enter Code for Secret
         </Button>
       </motion.div>
 
@@ -48,9 +48,11 @@ const SecretFeature = () => {
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>
-            <DialogTitle className="text-2xl">Enter Secret Code</DialogTitle>
-            <DialogDescription>
-              Please enter the secret code to unlock special content.
+            <DialogTitle className="text-2xl">🔒 Enter the Secret Code</DialogTitle>
+            <DialogDescription className="text-center">
+              Unlock hidden content by entering the secret code.
+              <br />
+              <span className="text-xs opacity-70">Hint: Think of our beloved teacher's name</span>
             </DialogDescription>
           </DialogHeader>
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -97,7 +99,10 @@ const SecretFeature = () => {
               </Button>
               
               <div className="text-center space-y-6">
-                <h2 className="text-3xl font-bold text-primary">#BringBackSanjeevSir</h2>
+                <div className="space-y-2">
+                  <h2 className="text-3xl font-bold text-primary">#BringBackSanjeevSir</h2>
+                  <p className="text-sm text-muted-foreground">A movement by Upscale Tuition Students</p>
+                </div>
                 
                 <motion.div 
                   className="text-6xl my-8"
@@ -119,7 +124,17 @@ const SecretFeature = () => {
                   His unique teaching style and dedication have been invaluable to our learning journey.
                 </p>
                 
-                <div className="flex justify-center gap-4 pt-4">
+                <div className="mt-8 p-4 bg-primary/5 rounded-lg border border-primary/10">
+                  <h3 className="font-medium mb-2">Why Sanjeev Sir is Special:</h3>
+                  <ul className="text-sm text-left space-y-1 list-disc pl-5">
+                    <li>Simplified complex concepts with real-world examples</li>
+                    <li>Always available for extra help after class</li>
+                    <li>Inspired students to love learning</li>
+                    <li>Had a 98% student satisfaction rate</li>
+                  </ul>
+                </div>
+
+                <div className="flex flex-wrap justify-center gap-4 pt-4">
                   <Button variant="outline" asChild>
                     <a href="#" className="flex items-center gap-2">
                       <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
