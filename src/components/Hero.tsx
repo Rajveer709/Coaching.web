@@ -165,7 +165,7 @@ const Hero = () => {
                 <p className="text-sm text-muted-foreground">Success Rate</p>
               </div>
             </motion.div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
