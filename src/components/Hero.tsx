@@ -52,15 +52,15 @@ const Hero = () => {
       />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <motion.div 
-            className="space-y-6 sm:space-y-8"
+        <div className="max-w-4xl">
+          <motion.div
+            className="space-y-6 sm:space-y-8 text-left"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <motion.div 
-              className="inline-block"
+            <motion.div
+              className="flex justify-start"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
@@ -70,14 +70,14 @@ const Hero = () => {
                 <span className="text-sm font-medium">Excellence in Education</span>
               </span>
             </motion.div>
-            
-            <div className="flex items-center gap-3 mb-4">
+
+            <div className="flex items-center justify-start gap-3 mb-4">
               <img 
                 src={upscaleLogo} 
                 alt="Upscale Tuition" 
-                className="h-12 w-auto"
+                className="h-16 sm:h-20 w-auto"
               />
-              <span className="text-2xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+              <span className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
                 Upscale Tuition
               </span>
             </div>
@@ -101,8 +101,8 @@ const Hero = () => {
               At Upscale Tuition, we empower students to achieve their academic dreams through personalized learning, expert faculty, and innovative teaching methods.
             </motion.p>
 
-            <motion.div 
-              className="flex flex-col sm:flex-row gap-4"
+            <motion.div
+              className="flex flex-col sm:flex-row gap-4 justify-start"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.8 }}
@@ -137,30 +137,30 @@ const Hero = () => {
             </motion.div>
 
             {/* Stats */}
-            <motion.div 
-              className="grid grid-cols-3 gap-4 pt-8 border-t border-border"
+            <motion.div
+              className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-4 pt-8 border-t border-border max-w-2xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.8 }}
             >
-              <div className="space-y-1">
-                <div className="flex items-center gap-2 text-primary">
-                  <BookOpen className="h-5 w-5" />
-                  <p className="text-2xl font-bold">15+</p>
+              <div className="space-y-2 text-left">
+                <div className="flex items-center justify-start gap-2 text-primary">
+                  <BookOpen className="h-6 w-6" />
+                  <p className="text-3xl sm:text-4xl font-bold">15+</p>
                 </div>
                 <p className="text-sm text-muted-foreground">Courses</p>
               </div>
-              <div className="space-y-1">
-                <div className="flex items-center gap-2 text-primary">
-                  <Users className="h-5 w-5" />
-                  <p className="text-2xl font-bold">500+</p>
+              <div className="space-y-2 text-left">
+                <div className="flex items-center justify-start gap-2 text-primary">
+                  <Users className="h-6 w-6" />
+                  <p className="text-3xl sm:text-4xl font-bold">500+</p>
                 </div>
                 <p className="text-sm text-muted-foreground">Students</p>
               </div>
-              <div className="space-y-1">
-                <div className="flex items-center gap-2 text-primary">
-                  <Award className="h-5 w-5" />
-                  <p className="text-2xl font-bold">98%</p>
+              <div className="space-y-2 text-left">
+                <div className="flex items-center justify-start gap-2 text-primary">
+                  <Award className="h-6 w-6" />
+                  <p className="text-3xl sm:text-4xl font-bold">98%</p>
                 </div>
                 <p className="text-sm text-muted-foreground">Success Rate</p>
               </div>

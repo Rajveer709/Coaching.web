@@ -97,6 +97,28 @@ const Testimonials = () => {
           ))}
         </div>
 
+        {/* Video Testimony Placeholder */}
+        <div className="mt-12 sm:mt-16">
+          <h3 className="text-2xl sm:text-3xl font-bold text-center mb-8">
+            Video <span className="text-primary">Testimonials</span>
+          </h3>
+          <div className="max-w-4xl mx-auto">
+            <div className="aspect-video bg-muted rounded-lg border-2 border-border flex items-center justify-center">
+              <div className="text-center space-y-4">
+                <div className="w-20 h-20 mx-auto rounded-full bg-primary/20 flex items-center justify-center">
+                  <svg className="w-10 h-10 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
+                  </svg>
+                </div>
+                <p className="text-lg text-muted-foreground">Video Testimonials Coming Soon</p>
+                <p className="text-sm text-muted-foreground max-w-md mx-auto">
+                  Watch our students share their success stories and experiences
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Stats Row */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 sm:mt-16">
           <div className="text-center">

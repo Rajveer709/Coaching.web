@@ -3,9 +3,15 @@ import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
+<<<<<<< HEAD
     <footer className="bg-black text-white w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+=======
+    <footer className="bg-black text-white">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+>>>>>>> 99f52317f4cae03c9d996e64f83799616518d02d
           {/* About Section */}
           <div className="space-y-4">
             <h3 className="text-2xl font-bold text-white">Upscale Tuition</h3>
@@ -64,6 +70,7 @@ const Footer = () => {
             </ul>
           </div>
 
+<<<<<<< HEAD
           {/* Our Courses */}
           <div>
             <h4 className="text-lg font-semibold mb-4 text-white">Our Courses</h4>
@@ -92,6 +99,8 @@ const Footer = () => {
             </div>
           </div>
 
+=======
+>>>>>>> 99f52317f4cae03c9d996e64f83799616518d02d
           {/* Social Media */}
           <div>
             <h4 className="text-lg font-semibold mb-4 text-white">Follow Us</h4>
@@ -140,7 +149,11 @@ const Footer = () => {
         </div>
 
         {/* Copyright */}
+<<<<<<< HEAD
         <div className="border-t border-gray-800 mt-12 pt-6 text-center">
+=======
+        <div className="border-t border-gray-800 mt-12 pt-8 text-center">
+>>>>>>> 99f52317f4cae03c9d996e64f83799616518d02d
           <p className="text-sm text-gray-400">
             &copy; {new Date().getFullYear()} Upscale Tuition. All rights reserved.
           </p>

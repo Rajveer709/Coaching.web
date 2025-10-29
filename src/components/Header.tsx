@@ -38,6 +38,12 @@ const Header = () => {
             >
               Faculty
             </button>
+            <a 
+              href="/courses"
+              className="text-foreground hover:text-primary transition-colors font-medium"
+            >
+              Our Courses
+            </a>
             <Button 
               onClick={() => scrollToSection("contact")}
               className="bg-primary hover:bg-primary/90"
@@ -74,6 +80,12 @@ const Header = () => {
             >
               Faculty
             </button>
+            <a 
+              href="/courses"
+              className="block w-full text-left px-4 py-2 text-foreground hover:text-primary transition-colors font-medium"
+            >
+              Our Courses
+            </a>
             <Button 
               onClick={() => scrollToSection("contact")}
               className="w-full bg-primary hover:bg-primary/90"
