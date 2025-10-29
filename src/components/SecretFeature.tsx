@@ -1,11 +1,9 @@
 import { useState } from "react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Lock, Heart, Users, MessageCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Lock, X } from "lucide-react";
-import { Button } from "./ui/button";
-import { Input } from "./ui/input";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "./ui/dialog";
-
-const SECRET_CODE = "SANJEEV";
 
 const SecretFeature = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,62 +11,55 @@ const SecretFeature = () => {
   const [showProtest, setShowProtest] = useState(false);
   const [error, setError] = useState("");
 
+  const SECRET_CODE = "password";
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (code.toUpperCase() === SECRET_CODE) {
+    if (code.toLowerCase() === SECRET_CODE) {
       setShowProtest(true);
-      setError("");
       setIsOpen(false);
+      setError("");
     } else {
       setError("Incorrect code. Try again!");
+      setCode("");
     }
   };
 
   return (
     <>
-      {/* Fixed bottom button */}
-      <motion.div 
-        className="fixed bottom-8 right-8 z-50"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1 }}
+      {/* Secret Button */}
+      <button
+        onClick={() => setIsOpen(true)}
+        className="fixed bottom-4 right-4 p-3 rounded-full bg-muted hover:bg-muted/80 transition-colors z-50 shadow-lg"
+        aria-label="Secret Feature"
       >
-        <Button 
-          variant="outline" 
-          size="lg"
-          className="rounded-full shadow-lg bg-background/80 backdrop-blur-sm border-primary/20 hover:bg-primary/10 transition-all group"
-          onClick={() => setIsOpen(true)}
-        >
-          <Lock className="h-5 w-5 mr-2 group-hover:scale-110 transition-transform" />
-          Enter Code for Secret
-        </Button>
-      </motion.div>
+        <Lock className="h-5 w-5" />
+      </button>
 
-      {/* Secret Code Dialog */}
+      {/* Code Entry Dialog */}
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="sm:max-w-[425px]">
+        <DialogContent className="sm:max-w-md">
           <DialogHeader>
-            <DialogTitle className="text-2xl">🔒 Enter the Secret Code</DialogTitle>
-            <DialogDescription className="text-center">
-              Unlock hidden content by entering the secret code.
-              <br />
-              <span className="text-xs opacity-70">Hint: Think of our beloved teacher's name</span>
+            <DialogTitle>Enter Secret Code</DialogTitle>
+            <DialogDescription>
+              Enter the secret code to unlock a special message
             </DialogDescription>
           </DialogHeader>
           <form onSubmit={handleSubmit} className="space-y-4">
-            <div className="space-y-2">
+            <div>
               <Input
                 type="password"
+                placeholder="Enter code..."
                 value={code}
                 onChange={(e) => setCode(e.target.value)}
-                placeholder="Enter code"
-                className="text-lg h-12"
-                autoFocus
+                className="w-full"
               />
-              {error && <p className="text-sm text-red-500">{error}</p>}
+              {error && (
+                <p className="text-sm text-destructive mt-2">{error}</p>
+              )}
             </div>
             <Button type="submit" className="w-full">
-              Unlock
+              Submit
             </Button>
           </form>
         </DialogContent>
@@ -77,79 +68,77 @@ const SecretFeature = () => {
       {/* Protest Modal */}
       <AnimatePresence>
         {showProtest && (
-          <motion.div 
-            className="fixed inset-0 bg-black/80 z-[100] flex items-center justify-center p-4"
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-background/95 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+            onClick={() => setShowProtest(false)}
           >
-            <motion.div 
-              className="bg-background rounded-2xl p-8 max-w-2xl w-full relative"
+            <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ type: "spring", duration: 0.5 }}
+              className="bg-card border-2 border-primary rounded-lg p-8 max-w-2xl w-full shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
             >
-              <Button 
-                variant="ghost" 
-                size="icon" 
-                className="absolute top-4 right-4"
-                onClick={() => setShowProtest(false)}
-              >
-                <X className="h-5 w-5" />
-              </Button>
-              
               <div className="text-center space-y-6">
-                <div className="space-y-2">
-                  <h2 className="text-3xl font-bold text-primary">#BringBackSanjeevSir</h2>
-                  <p className="text-sm text-muted-foreground">A movement by Upscale Tuition Students</p>
-                </div>
-                
-                <motion.div 
-                  className="text-6xl my-8"
-                  animate={{ 
-                    scale: [1, 1.1, 1],
-                    rotate: [-5, 5, -5, 5, -5, 0]
-                  }}
-                  transition={{ 
-                    duration: 2,
-                    repeat: Infinity,
-                    repeatType: "reverse"
-                  }}
+                {/* Animated Heart */}
+                <motion.div
+                  animate={{ scale: [1, 1.2, 1] }}
+                  transition={{ duration: 1, repeat: Infinity }}
+                  className="flex justify-center"
                 >
-                  ✊
+                  <Heart className="h-16 w-16 text-primary fill-primary" />
                 </motion.div>
-                
-                <p className="text-lg">
+
+                {/* Main Message */}
+                <h2 className="text-4xl sm:text-5xl font-bold text-primary">
+                  #BringBackSanjeevSir
+                </h2>
+
+                <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
                   We, the students of Upscale Tuition, respectfully request the return of our beloved teacher, Sanjeev Sir. 
-                  His unique teaching style and dedication have been invaluable to our learning journey.
+                  His dedication, teaching excellence, and genuine care for students made a profound impact on our learning journey.
                 </p>
-                
-                <div className="mt-8 p-4 bg-primary/5 rounded-lg border border-primary/10">
-                  <h3 className="font-medium mb-2">Why Sanjeev Sir is Special:</h3>
-                  <ul className="text-sm text-left space-y-1 list-disc pl-5">
-                    <li>Simplified complex concepts with real-world examples</li>
-                    <li>Always available for extra help after class</li>
-                    <li>Inspired students to love learning</li>
-                    <li>Had a 98% student satisfaction rate</li>
-                  </ul>
+
+                {/* Reasons */}
+                <div className="grid sm:grid-cols-3 gap-4 pt-4">
+                  <div className="p-4 rounded-lg bg-primary/10 border border-primary/20">
+                    <Users className="h-8 w-8 text-primary mx-auto mb-2" />
+                    <p className="text-sm font-medium">500+ Students Support</p>
+                  </div>
+                  <div className="p-4 rounded-lg bg-primary/10 border border-primary/20">
+                    <MessageCircle className="h-8 w-8 text-primary mx-auto mb-2" />
+                    <p className="text-sm font-medium">Outstanding Feedback</p>
+                  </div>
+                  <div className="p-4 rounded-lg bg-primary/10 border border-primary/20">
+                    <Heart className="h-8 w-8 text-primary mx-auto mb-2" />
+                    <p className="text-sm font-medium">Beloved by All</p>
+                  </div>
                 </div>
 
-                <div className="flex flex-wrap justify-center gap-4 pt-4">
-                  <Button variant="outline" asChild>
-                    <a href="#" className="flex items-center gap-2">
-                      <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
-                      </svg>
-                      Share on Twitter
-                    </a>
+                {/* Action Buttons */}
+                <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                  <Button
+                    className="flex-1"
+                    onClick={() => window.open("https://twitter.com/intent/tweet?text=We%20want%20Sanjeev%20Sir%20back%20at%20Upscale%20Tuition!%20%23BringBackSanjeevSir", "_blank")}
+                  >
+                    Share on Twitter
                   </Button>
-                  
-                  <Button asChild>
-                    <a href="#contact" className="flex items-center gap-2">
-                      ✍️ Sign Petition
-                    </a>
+                  <Button
+                    variant="outline"
+                    className="flex-1"
+                    onClick={() => setShowProtest(false)}
+                  >
+                    Close
                   </Button>
                 </div>
+
+                <p className="text-xs text-muted-foreground italic">
+                  "A good teacher can inspire hope, ignite the imagination, and instill a love of learning." - Brad Henry
+                </p>
               </div>
             </motion.div>
           </motion.div>

@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className="bg-black text-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {/* About Section */}
           <div className="space-y-6">
             <div className="flex items-center gap-3">
@@ -86,36 +86,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Our Courses */}
-          <div>
-            <h4 className="text-lg font-semibold mb-6 text-white">Our Courses</h4>
-            <ul className="space-y-3">
-              {[
-                { name: 'Mathematics', students: '250+' },
-                { name: 'Physics', students: '180+' },
-                { name: 'Chemistry', students: '160+' },
-                { name: 'Biology', students: '140+' },
-                { name: 'English', students: '200+' },
-                { name: 'Computer Science', students: '120+' },
-                { name: 'Competitive Exams', students: '300+' },
-              ].map((course, index) => (
-                <motion.li 
-                  key={course.name}
-                  className="flex justify-between items-center py-2 border-b border-gray-800"
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: index * 0.05 }}
-                >
-                  <span className="text-gray-300 text-sm">{course.name}</span>
-                  <span className="text-xs bg-primary/20 text-white px-2 py-1 rounded">
-                    {course.students}
-                  </span>
-                </motion.li>
-              ))}
-            </ul>
-          </div>
-
           {/* Social Media */}
           <div>
             <h4 className="text-lg font-semibold mb-6 text-white">Connect With Us</h4>
@@ -164,15 +134,10 @@ const Footer = () => {
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <div className="border-t border-gray-800 mt-12 pt-8 text-center">
           <p className="text-sm text-gray-400">
             &copy; {new Date().getFullYear()} Upscale Tuition. All rights reserved.
           </p>
-          <div className="flex gap-6 mt-4 md:mt-0">
-            <a href="#" className="text-sm text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="text-sm text-gray-400 hover:text-white transition-colors">Terms of Service</a>
-            <a href="#" className="text-sm text-gray-400 hover:text-white transition-colors">Sitemap</a>
-          </div>
         </div>
       </div>
     </footer>
