@@ -1,85 +1,63 @@
-import upscaleLogo from "@/assets/upscale-logo.png";
 import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, Clock } from "lucide-react";
 import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+    <footer className="bg-black text-white w-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* About Section */}
-          <div className="space-y-6">
-            <div className="flex items-center gap-3">
-              <img 
-                src={upscaleLogo} 
-                alt="Upscale Tuition Logo" 
-                className="h-12 w-auto"
-              />
-              <span className="text-2xl font-bold text-white">
-                Upscale Tuition
-              </span>
-            </div>
+          <div className="space-y-4">
+            <h3 className="text-2xl font-bold text-white">Upscale Tuition</h3>
             <p className="text-gray-300">
               Empowering students with quality education, expert guidance, and a passion for learning that lasts a lifetime.
             </p>
-            
-            <div className="space-y-3">
-              <div className="flex items-start gap-3">
-                <MapPin className="h-5 w-5 mt-1 text-primary flex-shrink-0" />
-                <p className="text-gray-300">123 Education St, Learning District, 400001</p>
+            <div className="space-y-2">
+              <div className="flex items-start">
+                <MapPin className="h-5 w-5 mt-1 text-primary flex-shrink-0 mr-2" />
+                <span className="text-gray-300">123 Education St, Learning District, 400001</span>
               </div>
-              <div className="flex items-center gap-3">
-                <Phone className="h-5 w-5 text-primary" />
-                <a href="tel:+911234567890" className="text-gray-300 hover:text-white transition-colors">+91 12345 67890</a>
+              <div className="flex items-center">
+                <Phone className="h-5 w-5 text-primary mr-2" />
+                <a href="tel:+911234567890" className="text-gray-300 hover:text-white">+91 12345 67890</a>
               </div>
-              <div className="flex items-center gap-3">
-                <Mail className="h-5 w-5 text-primary" />
-                <a href="mailto:info@upscaletuition.com" className="text-gray-300 hover:text-white transition-colors">info@upscaletuition.com</a>
+              <div className="flex items-center">
+                <Mail className="h-5 w-5 text-primary mr-2" />
+                <a href="mailto:info@upscaletuition.com" className="text-gray-300 hover:text-white">info@upscaletuition.com</a>
               </div>
-              <div className="flex items-center gap-3">
-                <Clock className="h-5 w-5 text-primary" />
-                <p className="text-gray-300">Mon-Sat: 8:00 AM - 8:00 PM</p>
+              <div className="flex items-center">
+                <Clock className="h-5 w-5 text-primary mr-2" />
+                <span className="text-gray-300">Mon-Sat: 8:00 AM - 8:00 PM</span>
               </div>
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-6 text-white relative inline-block">
-              Quick Links
-              <motion.span 
-                className="absolute bottom-0 left-0 h-0.5 bg-primary w-1/3"
-                initial={{ width: 0 }}
-                whileInView={{ width: '33%' }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-              />
-            </h4>
-            <ul className="space-y-3">
+            <h4 className="text-lg font-semibold mb-4 text-white">Quick Links</h4>
+            <ul className="space-y-2">
               {[
-                { name: 'Home', href: '#' },
-                { name: 'About Us', href: '#about' },
-                { name: 'Our Faculty', href: '#faculty' },
-                { name: 'Courses', href: '#courses' },
-                { name: 'Testimonials', href: '#testimonials' },
-                { name: 'Contact Us', href: '#contact' },
-                { name: 'Blog', href: '#' },
-                { name: 'FAQ', href: '#' },
+                'Home',
+                'About Us',
+                'Our Faculty',
+                'Courses',
+                'Testimonials',
+                'Contact Us',
+                'Blog',
+                'FAQ'
               ].map((item, index) => (
                 <motion.li 
-                  key={item.name}
+                  key={item}
                   initial={{ opacity: 0, x: -10 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.3, delay: index * 0.05 }}
-                  className="group"
                 >
                   <a 
-                    href={item.href} 
-                    className="flex items-center text-gray-300 hover:text-white transition-colors"
+                    href={`#${item.toLowerCase().replace(' ', '-')}`} 
+                    className="text-gray-300 hover:text-white transition-colors block py-1"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                    {item.name}
+                    {item}
                   </a>
                 </motion.li>
               ))}
@@ -88,49 +66,47 @@ const Footer = () => {
 
           {/* Our Courses */}
           <div>
-            <h4 className="text-lg font-semibold mb-6 text-white">Our Courses</h4>
-            <ul className="space-y-3">
+            <h4 className="text-lg font-semibold mb-4 text-white">Our Courses</h4>
+            <div className="grid grid-cols-2 gap-2">
               {[
-                { name: 'Mathematics', students: '250+' },
-                { name: 'Physics', students: '180+' },
-                { name: 'Chemistry', students: '160+' },
-                { name: 'Biology', students: '140+' },
-                { name: 'English', students: '200+' },
-                { name: 'Computer Science', students: '120+' },
-                { name: 'Competitive Exams', students: '300+' },
+                { name: 'Mathematics', count: '250+' },
+                { name: 'Physics', count: '180+' },
+                { name: 'Chemistry', count: '160+' },
+                { name: 'Biology', count: '140+' },
+                { name: 'English', count: '200+' },
+                { name: 'Computer Science', count: '120+' },
+                { name: 'Competitive Exams', count: '300+' },
               ].map((course, index) => (
-                <motion.li 
+                <motion.div 
                   key={course.name}
-                  className="flex justify-between items-center py-2 border-b border-gray-800"
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.3, delay: index * 0.05 }}
+                  className="bg-gray-900/50 rounded p-2"
                 >
-                  <span className="text-gray-300 text-sm">{course.name}</span>
-                  <span className="text-xs bg-primary/20 text-white px-2 py-1 rounded">
-                    {course.students}
-                  </span>
-                </motion.li>
+                  <div className="text-sm text-gray-300">{course.name}</div>
+                  <div className="text-xs text-primary">{course.count}</div>
+                </motion.div>
               ))}
-            </ul>
+            </div>
           </div>
 
           {/* Social Media */}
           <div>
-            <h4 className="text-lg font-semibold mb-6 text-white">Connect With Us</h4>
-            <div className="flex flex-wrap gap-4">
+            <h4 className="text-lg font-semibold mb-4 text-white">Follow Us</h4>
+            <div className="flex space-x-4 mb-6">
               {[
-                { icon: <Facebook className="h-6 w-6" />, name: 'Facebook', url: '#' },
-                { icon: <Twitter className="h-6 w-6" />, name: 'Twitter', url: '#' },
-                { icon: <Instagram className="h-6 w-6" />, name: 'Instagram', url: '#' },
-                { icon: <Linkedin className="h-6 w-6" />, name: 'LinkedIn', url: '#' },
+                { icon: <Facebook className="h-5 w-5" />, name: 'Facebook' },
+                { icon: <Twitter className="h-5 w-5" />, name: 'Twitter' },
+                { icon: <Instagram className="h-5 w-5" />, name: 'Instagram' },
+                { icon: <Linkedin className="h-5 w-5" />, name: 'LinkedIn' }
               ].map((social, index) => (
                 <motion.a
                   key={social.name}
-                  href={social.url}
-                  className="bg-gray-900 p-3 rounded-full hover:bg-primary transition-colors"
-                  whileHover={{ y: -3, scale: 1.05 }}
+                  href="#"
+                  className="bg-gray-900 h-10 w-10 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+                  whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.95 }}
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
@@ -139,23 +115,23 @@ const Footer = () => {
                   aria-label={social.name}
                 >
                   {social.icon}
-                  <span className="sr-only">{social.name}</span>
                 </motion.a>
               ))}
             </div>
-            <div className="mt-8">
-              <h5 className="font-medium mb-4 text-white">Opening Hours</h5>
-              <div className="space-y-2">
-                <div className="flex justify-between text-sm text-gray-300">
-                  <span>Monday - Friday</span>
-                  <span>8:00 AM - 8:00 PM</span>
+            
+            <div className="bg-gray-900/50 p-4 rounded-lg">
+              <h5 className="font-medium text-white mb-2">Opening Hours</h5>
+              <div className="space-y-1 text-sm">
+                <div className="flex justify-between">
+                  <span className="text-gray-300">Monday - Friday</span>
+                  <span className="text-white">8:00 AM - 8:00 PM</span>
                 </div>
-                <div className="flex justify-between text-sm text-gray-300">
-                  <span>Saturday</span>
-                  <span>9:00 AM - 6:00 PM</span>
+                <div className="flex justify-between">
+                  <span className="text-gray-300">Saturday</span>
+                  <span className="text-white">9:00 AM - 6:00 PM</span>
                 </div>
-                <div className="flex justify-between text-sm text-gray-300">
-                  <span>Sunday</span>
+                <div className="flex justify-between">
+                  <span className="text-gray-300">Sunday</span>
                   <span className="text-red-400">Closed</span>
                 </div>
               </div>
@@ -164,15 +140,10 @@ const Footer = () => {
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <div className="border-t border-gray-800 mt-12 pt-6 text-center">
           <p className="text-sm text-gray-400">
             &copy; {new Date().getFullYear()} Upscale Tuition. All rights reserved.
           </p>
-          <div className="flex gap-6 mt-4 md:mt-0">
-            <a href="#" className="text-sm text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="text-sm text-gray-400 hover:text-white transition-colors">Terms of Service</a>
-            <a href="#" className="text-sm text-gray-400 hover:text-white transition-colors">Sitemap</a>
-          </div>
         </div>
       </div>
     </footer>

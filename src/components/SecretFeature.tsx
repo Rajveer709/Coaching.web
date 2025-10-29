@@ -5,7 +5,7 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "./ui/dialog";
 
-const SECRET_CODE = "SANJEEV";
+const SECRET_CODE = "rajveer";
 
 const SecretFeature = () => {
   const [isOpen, setIsOpen] = useState(false);
