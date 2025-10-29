@@ -1,18 +1,11 @@
 import { useState } from "react";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { Lock, Heart, Users, MessageCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-<<<<<<< HEAD
-import { Lock, X } from "lucide-react";
-import { Button } from "./ui/button";
-import { Input } from "./ui/input";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "./ui/dialog";
+import { Lock, X, Heart, Users, MessageCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 
 const SECRET_CODE = "rajveer";
-=======
->>>>>>> 99f52317f4cae03c9d996e64f83799616518d02d
 
 const SecretFeature = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +13,7 @@ const SecretFeature = () => {
   const [showProtest, setShowProtest] = useState(false);
   const [error, setError] = useState("");
 
-  const SECRET_CODE = "password";
+  // SECRET_CODE is defined at the top level
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

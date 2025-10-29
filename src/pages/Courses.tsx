@@ -1,24 +1,10 @@
 import { motion } from "framer-motion";
-<<<<<<< HEAD
-import { Link } from "react-router-dom";
-
-const courses = [
-  {
-    id: 1,
-    title: "Mathematics",
-    description: "Master mathematical concepts with our expert tutors. From basic arithmetic to advanced calculus, we've got you covered.",
-    duration: "12 weeks",
-    level: "All Levels",
-    color: "bg-orange-500"
-  },
-  {
-    id: 2,
-    title: "Physics",
-    description: "Explore the fundamental principles of physics through practical experiments and problem-solving sessions.",
-    duration: "10 weeks",
-    level: "Intermediate",
-    color: "bg-yellow-500"
-  },
+import { BookOpen, Users, Clock, Award, Microscope, Calculator, Book, Code, TrendingUp, Briefcase, Trophy, GraduationCap, Star, CheckCircle2, Atom, Sparkles, Target } from "lucide-react";
+import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
   {
     id: 3,
     title: "Chemistry",
@@ -125,7 +111,9 @@ import Footer from "@/components/Footer";
 const Courses = () => {
   const courses = [
     {
+      id: 1,
       name: "Mathematics",
+      title: "Mathematics",
       description: "Master algebra, calculus, geometry, and problem-solving techniques with our expert faculty.",
       students: "250+",
       duration: "12 months",
@@ -597,7 +585,6 @@ const Courses = () => {
         </section>
       </main>
       <Footer />
->>>>>>> 99f52317f4cae03c9d996e64f83799616518d02d
     </div>
   );
 };
