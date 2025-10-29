@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import { BookOpen, Users, Clock, Award, Microscope, Calculator, Book, Code, TrendingUp, Briefcase, Trophy, GraduationCap } from "lucide-react";
+import { BookOpen, Users, Clock, Award, Microscope, Calculator, Book, Code, TrendingUp, Briefcase, Trophy, GraduationCap, Star, CheckCircle2, Atom, Sparkles, Target } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -14,9 +15,13 @@ const Courses = () => {
       duration: "12 months",
       level: "Class 8-12",
       icon: <Calculator className="h-8 w-8" />,
-      color: "from-blue-500 to-cyan-500",
-      bgColor: "bg-gradient-to-br from-blue-500/10 to-cyan-500/10",
-      features: ["Live Classes", "Practice Tests", "Study Materials"],
+      color: "from-blue-600 to-cyan-600",
+      cardBg: "from-blue-50 to-cyan-50 dark:from-blue-950/30 dark:to-cyan-950/30",
+      iconBg: "bg-gradient-to-br from-blue-100 to-cyan-100 dark:from-blue-900/40 dark:to-cyan-900/40",
+      borderColor: "hover:border-blue-500/50 hover:shadow-blue-500/20",
+      features: ["Live Classes", "Practice Tests", "Study Materials", "Doubt Sessions"],
+      rating: 4.8,
+      popular: true,
     },
     {
       name: "Physics",
@@ -24,10 +29,14 @@ const Courses = () => {
       students: "180+",
       duration: "12 months",
       level: "Class 9-12",
-      icon: <Trophy className="h-8 w-8" />,
-      color: "from-orange-500 to-red-500",
-      bgColor: "bg-gradient-to-br from-orange-500/10 to-red-500/10",
-      features: ["Lab Sessions", "Mock Tests", "Doubt Clearing"],
+      icon: <Atom className="h-8 w-8" />,
+      color: "from-orange-600 to-red-600",
+      cardBg: "from-orange-50 to-red-50 dark:from-orange-950/30 dark:to-red-950/30",
+      iconBg: "bg-gradient-to-br from-orange-100 to-red-100 dark:from-orange-900/40 dark:to-red-900/40",
+      borderColor: "hover:border-orange-500/50 hover:shadow-orange-500/20",
+      features: ["Lab Sessions", "Mock Tests", "Doubt Clearing", "Experiments"],
+      rating: 4.9,
+      popular: false,
     },
     {
       name: "Chemistry",
@@ -36,9 +45,13 @@ const Courses = () => {
       duration: "12 months",
       level: "Class 9-12",
       icon: <Microscope className="h-8 w-8" />,
-      color: "from-green-500 to-emerald-500",
-      bgColor: "bg-gradient-to-br from-green-500/10 to-emerald-500/10",
-      features: ["Practical Classes", "Assignments", "Weekly Tests"],
+      color: "from-emerald-600 to-green-600",
+      cardBg: "from-emerald-50 to-green-50 dark:from-emerald-950/30 dark:to-green-950/30",
+      iconBg: "bg-gradient-to-br from-emerald-100 to-green-100 dark:from-emerald-900/40 dark:to-green-900/40",
+      borderColor: "hover:border-emerald-500/50 hover:shadow-emerald-500/20",
+      features: ["Practical Classes", "Assignments", "Weekly Tests", "Lab Work"],
+      rating: 4.7,
+      popular: false,
     },
     {
       name: "Biology",
@@ -47,9 +60,13 @@ const Courses = () => {
       duration: "12 months",
       level: "Class 9-12",
       icon: <Book className="h-8 w-8" />,
-      color: "from-teal-500 to-cyan-500",
-      bgColor: "bg-gradient-to-br from-teal-500/10 to-cyan-500/10",
-      features: ["Visual Learning", "Diagrams", "Specimen Study"],
+      color: "from-teal-600 to-cyan-600",
+      cardBg: "from-teal-50 to-cyan-50 dark:from-teal-950/30 dark:to-cyan-950/30",
+      iconBg: "bg-gradient-to-br from-teal-100 to-cyan-100 dark:from-teal-900/40 dark:to-cyan-900/40",
+      borderColor: "hover:border-teal-500/50 hover:shadow-teal-500/20",
+      features: ["Visual Learning", "Diagrams", "Specimen Study", "Field Trips"],
+      rating: 4.6,
+      popular: false,
     },
     {
       name: "English",
@@ -58,9 +75,13 @@ const Courses = () => {
       duration: "10 months",
       level: "Class 6-12",
       icon: <BookOpen className="h-8 w-8" />,
-      color: "from-pink-500 to-rose-500",
-      bgColor: "bg-gradient-to-br from-pink-500/10 to-rose-500/10",
-      features: ["Speaking Practice", "Writing Skills", "Literature"],
+      color: "from-rose-600 to-pink-600",
+      cardBg: "from-rose-50 to-pink-50 dark:from-rose-950/30 dark:to-pink-950/30",
+      iconBg: "bg-gradient-to-br from-rose-100 to-pink-100 dark:from-rose-900/40 dark:to-pink-900/40",
+      borderColor: "hover:border-rose-500/50 hover:shadow-rose-500/20",
+      features: ["Speaking Practice", "Writing Skills", "Literature", "Debates"],
+      rating: 4.8,
+      popular: false,
     },
     {
       name: "Computer Science",
@@ -69,9 +90,13 @@ const Courses = () => {
       duration: "12 months",
       level: "Class 9-12",
       icon: <Code className="h-8 w-8" />,
-      color: "from-violet-500 to-purple-500",
-      bgColor: "bg-gradient-to-br from-violet-500/10 to-purple-500/10",
-      features: ["Coding Labs", "Projects", "Algorithm Training"],
+      color: "from-sky-600 to-blue-600",
+      cardBg: "from-sky-50 to-blue-50 dark:from-sky-950/30 dark:to-blue-950/30",
+      iconBg: "bg-gradient-to-br from-sky-100 to-blue-100 dark:from-sky-900/40 dark:to-blue-900/40",
+      borderColor: "hover:border-sky-500/50 hover:shadow-sky-500/20",
+      features: ["Coding Labs", "Projects", "Algorithm Training", "Hackathons"],
+      rating: 4.9,
+      popular: true,
     },
     {
       name: "Competitive Exams",
@@ -79,10 +104,14 @@ const Courses = () => {
       students: "300+",
       duration: "24 months",
       level: "Class 11-12",
-      icon: <GraduationCap className="h-8 w-8" />,
-      color: "from-amber-500 to-yellow-500",
-      bgColor: "bg-gradient-to-br from-amber-500/10 to-yellow-500/10",
-      features: ["Mock Tests", "Expert Faculty", "Study Plans"],
+      icon: <Trophy className="h-8 w-8" />,
+      color: "from-amber-600 to-orange-600",
+      cardBg: "from-amber-50 to-orange-50 dark:from-amber-950/30 dark:to-orange-950/30",
+      iconBg: "bg-gradient-to-br from-amber-100 to-orange-100 dark:from-amber-900/40 dark:to-orange-900/40",
+      borderColor: "hover:border-amber-500/50 hover:shadow-amber-500/20",
+      features: ["Mock Tests", "Expert Faculty", "Study Plans", "Mentorship"],
+      rating: 5.0,
+      popular: true,
     },
     {
       name: "Commerce",
@@ -91,9 +120,13 @@ const Courses = () => {
       duration: "12 months",
       level: "Class 11-12",
       icon: <Briefcase className="h-8 w-8" />,
-      color: "from-slate-500 to-gray-600",
-      bgColor: "bg-gradient-to-br from-slate-500/10 to-gray-600/10",
-      features: ["Case Studies", "Live Markets", "Accounting"],
+      color: "from-slate-600 to-zinc-600",
+      cardBg: "from-slate-50 to-zinc-50 dark:from-slate-950/30 dark:to-zinc-950/30",
+      iconBg: "bg-gradient-to-br from-slate-100 to-zinc-100 dark:from-slate-900/40 dark:to-zinc-900/40",
+      borderColor: "hover:border-slate-500/50 hover:shadow-slate-500/20",
+      features: ["Case Studies", "Live Markets", "Accounting", "Finance Basics"],
+      rating: 4.7,
+      popular: false,
     },
   ];
 
@@ -102,10 +135,122 @@ const Courses = () => {
       <Header />
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="relative py-20 sm:py-32 bg-gradient-to-br from-background via-muted/20 to-background overflow-hidden">
-          <div className="absolute inset-0 bg-grid-pattern opacity-5" />
-          <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
+        <section className="relative py-20 sm:py-32 bg-gradient-to-br from-background via-muted/30 to-background overflow-hidden">
+          <div className="absolute inset-0 bg-grid-pattern opacity-[0.02]" />
+
+          {/* Animated Background Elements */}
+          <motion.div
+            className="absolute top-10 left-[10%] w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"
+            animate={{
+              scale: [1, 1.2, 1],
+              opacity: [0.3, 0.5, 0.3],
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+          <motion.div
+            className="absolute top-20 right-[15%] w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl"
+            animate={{
+              scale: [1, 1.3, 1],
+              opacity: [0.2, 0.4, 0.2],
+            }}
+            transition={{
+              duration: 10,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 1,
+            }}
+          />
+          <motion.div
+            className="absolute bottom-10 left-[20%] w-72 h-72 bg-teal-500/10 rounded-full blur-3xl"
+            animate={{
+              scale: [1, 1.4, 1],
+              opacity: [0.25, 0.45, 0.25],
+            }}
+            transition={{
+              duration: 9,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 2,
+            }}
+          />
+          <motion.div
+            className="absolute bottom-32 right-[10%] w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl"
+            animate={{
+              scale: [1, 1.25, 1],
+              opacity: [0.3, 0.5, 0.3],
+            }}
+            transition={{
+              duration: 11,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 3,
+            }}
+          />
+
+          {/* Floating Icons */}
+          <motion.div
+            className="absolute top-32 left-[5%] opacity-20"
+            animate={{
+              y: [0, -20, 0],
+              rotate: [0, 10, 0],
+            }}
+            transition={{
+              duration: 5,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          >
+            <BookOpen className="h-12 w-12 text-primary" />
+          </motion.div>
+          <motion.div
+            className="absolute top-40 right-[8%] opacity-20"
+            animate={{
+              y: [0, 20, 0],
+              rotate: [0, -10, 0],
+            }}
+            transition={{
+              duration: 6,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 1,
+            }}
+          >
+            <GraduationCap className="h-16 w-16 text-blue-500" />
+          </motion.div>
+          <motion.div
+            className="absolute bottom-40 left-[12%] opacity-20"
+            animate={{
+              y: [0, -15, 0],
+              rotate: [0, 15, 0],
+            }}
+            transition={{
+              duration: 7,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 2,
+            }}
+          >
+            <Award className="h-14 w-14 text-cyan-500" />
+          </motion.div>
+          <motion.div
+            className="absolute bottom-20 right-[12%] opacity-20"
+            animate={{
+              y: [0, 18, 0],
+              rotate: [0, -12, 0],
+            }}
+            transition={{
+              duration: 6.5,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 0.5,
+            }}
+          >
+            <Target className="h-10 w-10 text-emerald-500" />
+          </motion.div>
 
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <motion.div
@@ -118,18 +263,31 @@ const Courses = () => {
                 initial={{ scale: 0.9, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.2, duration: 0.5 }}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-primary/10 to-blue-500/10 border border-primary/30 mb-8 backdrop-blur-sm shadow-lg"
               >
-                <GraduationCap className="h-5 w-5 text-primary" />
-                <span className="text-sm font-medium text-primary">Premium Education Programs</span>
+                <Sparkles className="h-5 w-5 text-primary" />
+                <span className="text-sm font-semibold bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">Premium Education Programs</span>
               </motion.div>
 
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3, duration: 0.6 }}
+                className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-8 leading-tight"
+              >
                 Explore Our{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-blue-500 to-primary">
-                  Courses
+                <span className="relative inline-block">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-cyan-500 to-teal-500 animate-gradient">
+                    Courses
+                  </span>
+                  <motion.span
+                    className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-blue-600 via-cyan-500 to-teal-500 rounded-full"
+                    initial={{ scaleX: 0 }}
+                    animate={{ scaleX: 1 }}
+                    transition={{ delay: 0.8, duration: 0.8 }}
+                  />
                 </span>
-              </h1>
+              </motion.h1>
               <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
                 Comprehensive academic programs with expert faculty, personalized attention, and proven results to help students excel in their studies and competitive examinations.
               </p>
@@ -150,46 +308,90 @@ const Courses = () => {
                   whileHover={{ y: -8 }}
                   className="group"
                 >
-                  <Card className="relative p-6 h-full border-2 border-transparent hover:border-primary/30 transition-all duration-500 overflow-hidden bg-card/50 backdrop-blur-sm">
-                    <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${course.bgColor}`} />
+                  <Card className={`relative p-6 h-full border-2 ${course.borderColor} transition-all duration-500 overflow-hidden bg-gradient-to-br ${course.cardBg} shadow-lg hover:shadow-2xl`}>
+                    {course.popular && (
+                      <div className="absolute -top-0 -right-0 z-10">
+                        <div className="bg-gradient-to-r from-amber-500 to-orange-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg shadow-lg flex items-center gap-1">
+                          <Star className="h-3 w-3 fill-white" />
+                          Popular
+                        </div>
+                      </div>
+                    )}
 
                     <div className="relative space-y-5">
                       <div className="flex items-start justify-between">
-                        <div className={`p-4 rounded-xl ${course.bgColor} text-transparent bg-clip-text bg-gradient-to-br ${course.color} group-hover:scale-110 transition-transform duration-300`}>
-                          {course.icon}
-                        </div>
-                        <Badge variant="secondary" className="text-xs font-semibold">
+                        <motion.div
+                          className={`p-4 rounded-2xl ${course.iconBg} shadow-md`}
+                          whileHover={{ rotate: [0, -10, 10, -10, 0] }}
+                          transition={{ duration: 0.5 }}
+                        >
+                          <div className={`text-transparent bg-clip-text bg-gradient-to-br ${course.color}`}>
+                            {course.icon}
+                          </div>
+                        </motion.div>
+                        <Badge variant="outline" className="text-xs font-semibold border-2">
                           {course.level}
                         </Badge>
                       </div>
 
                       <div>
-                        <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">
-                          {course.name}
-                        </h3>
-                        <p className="text-muted-foreground text-sm leading-relaxed line-clamp-3">
+                        <div className="flex items-center justify-between mb-2">
+                          <h3 className={`text-2xl font-bold bg-gradient-to-r ${course.color} bg-clip-text text-transparent`}>
+                            {course.name}
+                          </h3>
+                        </div>
+                        <div className="flex items-center gap-1 mb-3">
+                          {Array.from({ length: 5 }).map((_, idx) => (
+                            <Star
+                              key={idx}
+                              className={`h-3.5 w-3.5 ${
+                                idx < Math.floor(course.rating)
+                                  ? 'fill-amber-400 text-amber-400'
+                                  : 'text-gray-300'
+                              }`}
+                            />
+                          ))}
+                          <span className="text-xs font-semibold text-muted-foreground ml-1">
+                            {course.rating}
+                          </span>
+                        </div>
+                        <p className="text-muted-foreground text-sm leading-relaxed">
                           {course.description}
                         </p>
                       </div>
 
-                      <div className="space-y-2">
+                      <div className="space-y-2.5">
                         {course.features.map((feature, idx) => (
-                          <div key={idx} className="flex items-center gap-2">
-                            <div className="h-1.5 w-1.5 rounded-full bg-primary" />
-                            <span className="text-xs text-muted-foreground">{feature}</span>
-                          </div>
+                          <motion.div
+                            key={idx}
+                            initial={{ opacity: 0, x: -10 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: index * 0.1 + idx * 0.05 }}
+                            className="flex items-center gap-2.5"
+                          >
+                            <CheckCircle2 className={`h-4 w-4 flex-shrink-0 text-transparent bg-clip-text bg-gradient-to-r ${course.color}`} />
+                            <span className="text-xs font-medium text-muted-foreground">{feature}</span>
+                          </motion.div>
                         ))}
                       </div>
 
-                      <div className="pt-4 border-t border-border/50 space-y-2">
-                        <div className="flex items-center gap-2 text-sm">
-                          <Users className="h-4 w-4 text-primary" />
-                          <span className="text-muted-foreground font-medium">{course.students} Students</span>
+                      <div className="pt-4 border-t-2 border-border/50 space-y-3">
+                        <div className="flex items-center justify-between text-sm">
+                          <div className="flex items-center gap-2">
+                            <Users className="h-4 w-4 text-primary" />
+                            <span className="font-semibold text-foreground">{course.students}</span>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <Clock className="h-4 w-4 text-primary" />
+                            <span className="font-semibold text-foreground">{course.duration}</span>
+                          </div>
                         </div>
-                        <div className="flex items-center gap-2 text-sm">
-                          <Clock className="h-4 w-4 text-primary" />
-                          <span className="text-muted-foreground font-medium">{course.duration}</span>
-                        </div>
+                        <Button
+                          className={`w-full bg-gradient-to-r ${course.color} hover:opacity-90 transition-opacity shadow-md`}
+                          size="sm"
+                        >
+                          View Details
+                        </Button>
                       </div>
                     </div>
                   </Card>
