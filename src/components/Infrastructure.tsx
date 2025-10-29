@@ -1,6 +1,30 @@
 import { motion } from "framer-motion";
-import { Building2, Wifi, BookOpen, MonitorPlay, Microscope, Laptop2 } from "lucide-react";
+import { Building2, Wifi, BookOpen, MonitorPlay, ChevronRight, ChevronLeft } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
+import { useState } from "react";
+
+const infrastructureImages = [
+  {
+    id: 1,
+    alt: "Modern classroom with smart board",
+    src: "/images/classroom.jpg"
+  },
+  {
+    id: 2,
+    alt: "Well-equipped science laboratory",
+    src: "/images/lab.jpg"
+  },
+  {
+    id: 3,
+    alt: "Computer lab with latest technology",
+    src: "/images/computer-lab.jpg"
+  },
+  {
+    id: 4,
+    alt: "School library with study spaces",
+    src: "/images/library.jpg"
+  }
+];
 
 const infrastructureItems = [
   {
@@ -22,16 +46,6 @@ const infrastructureItems = [
     icon: <MonitorPlay className="h-10 w-10 text-primary" />,
     title: "Audio-Visual Rooms",
     description: "Dedicated spaces equipped with projectors and audio systems for interactive learning sessions and presentations."
-  },
-  {
-    icon: <Microscope className="h-10 w-10 text-primary" />,
-    title: "Science Laboratory",
-    description: "Fully-equipped laboratory for practical experiments and hands-on learning in science subjects."
-  },
-  {
-    icon: <Laptop2 className="h-10 w-10 text-primary" />,
-    title: "Computer Lab",
-    description: "Modern computer lab with the latest hardware and software for technology education and digital literacy."
   }
 ];
 
@@ -96,6 +110,39 @@ const Infrastructure = () => {
             </motion.div>
           ))}
         </motion.div>
+
+        {/* Image Gallery */}
+        <div className="mt-16">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="relative bg-gray-100 dark:bg-gray-800 rounded-xl p-8"
+          >
+            <h3 className="text-2xl font-bold mb-6 text-center">Campus Gallery</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {infrastructureImages.map((image) => (
+                <div 
+                  key={image.id}
+                  className="aspect-square bg-gray-200 dark:bg-gray-700 rounded-lg overflow-hidden relative group"
+                >
+                  <div className="absolute inset-0 bg-primary/10 flex items-center justify-center">
+                    <span className="text-sm text-gray-500">Image: {image.alt}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="flex justify-center mt-6 gap-4">
+              <button className="p-2 rounded-full bg-white dark:bg-gray-700 shadow-md hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors">
+                <ChevronLeft className="h-5 w-5" />
+              </button>
+              <button className="p-2 rounded-full bg-white dark:bg-gray-700 shadow-md hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors">
+                <ChevronRight className="h-5 w-5" />
+              </button>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
