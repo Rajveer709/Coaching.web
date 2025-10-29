@@ -41,6 +41,11 @@ const infrastructureItems = [
     icon: <BookOpen className="h-10 w-10 text-primary" />,
     title: "Well-Stocked Library",
     description: "Extensive collection of reference books, journals, and digital resources to support academic excellence."
+  },
+  {
+    icon: <MonitorPlay className="h-10 w-10 text-primary" />,
+    title: "Audio-Visual Rooms",
+    description: "Dedicated spaces equipped with projectors and audio systems for interactive learning sessions and presentations."
   }
 ];
 
@@ -76,7 +81,7 @@ const Infrastructure = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl font-bold mb-4">Our Infrastructure</h2>
+          <h2 className="text-4xl font-bold mb-4">Our World-Class Infrastructure</h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             We provide state-of-the-art facilities designed to enhance the learning experience and foster academic excellence.
           </p>
