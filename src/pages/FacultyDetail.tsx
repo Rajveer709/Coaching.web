@@ -8,12 +8,55 @@ import faculty1 from "@/assets/faculty-1.jpg";
 import faculty2 from "@/assets/faculty-2.jpg";
 import faculty3 from "@/assets/faculty-3.jpg";
 import faculty4 from "@/assets/faculty-4.jpg";
+import ajayPandey from "@/assets/Ajay Pandey Sir.jpg";
+import kamleshSatani from "@/assets/Kamlesh Satani Sir.jpg";
 
 const FacultyDetail = () => {
   const { id } = useParams();
 
   const facultyData = {
     "1": {
+      name: "Ajay Pandey Sir",
+      subject: "Physics Expert",
+      qualification: "M.Sc Physics, MCA, B.Ed.",
+      experience: "30 years teaching experience",
+      image: ajayPandey,
+      bio: "Ajay Pandey Sir is a distinguished physics educator with over three decades of teaching experience. He has taught at prestigious institutions including St. Xavier and Sathya Sai Indore, helping countless students excel in their academic pursuits.",
+      specializations: ["Physics", "Problem Solving", "Exam Preparation", "Conceptual Clarity"],
+      achievements: [
+        "30+ years of exceptional teaching career",
+        "Taught at St. Xavier and Sathya Sai Indore",
+        "Consistently high student performance rates",
+        "Recognized for innovative teaching methodologies"
+      ],
+      education: [
+        "M.Sc Physics",
+        "MCA (Master of Computer Applications)",
+        "B.Ed. (Bachelor of Education)"
+      ],
+      institutions: "Taught in St. Xavier, Sathya Sai Indore"
+    },
+    "2": {
+      name: "Kamlesh Satani Sir",
+      subject: "Mathematics Expert",
+      qualification: "M.Sc. Mathematics, B.Ed.",
+      experience: "15 years teaching experience",
+      image: kamleshSatani,
+      bio: "Kamlesh Satani Sir is an accomplished mathematics educator with extensive experience in making complex mathematical concepts understandable and engaging for students. His teaching methodology focuses on building strong foundational knowledge while fostering problem-solving skills.",
+      specializations: ["Mathematics", "Algebra", "Calculus", "Exam Preparation"],
+      achievements: [
+        "15+ years of dedicated teaching career",
+        "Taught at D.P.S. Nepania Indore and Agarwal Public School Indore",
+        "Consistently high student performance in board examinations",
+        "Recognized for innovative teaching approaches"
+      ],
+      education: [
+        "M.Sc. Mathematics",
+        "B.Ed. (Bachelor of Education)"
+      ],
+      institutions: "Taught in D.P.S. Nepania Indore, Agarwal Public School Indore"
+    },
+    "3": {
       name: "Dr. Rajesh Kumar",
       subject: "Mathematics & Physics",
       qualification: "Ph.D. in Mathematics, IIT Delhi",
@@ -31,9 +74,10 @@ const FacultyDetail = () => {
         "Ph.D. in Mathematics - IIT Delhi",
         "M.Sc. in Applied Mathematics - Delhi University",
         "B.Sc. in Mathematics - St. Stephen's College"
-      ]
+      ],
+      institutions: ""
     },
-    "2": {
+    "4": {
       name: "Prof. Priya Sharma",
       subject: "Chemistry & Biology",
       qualification: "M.Sc. in Chemistry, Delhi University",
@@ -51,47 +95,8 @@ const FacultyDetail = () => {
         "M.Sc. in Chemistry - Delhi University",
         "B.Sc. in Chemistry - Miranda House",
         "Advanced Certification in Science Education"
-      ]
-    },
-    "3": {
-      name: "Dr. Anil Verma",
-      subject: "English & Social Science",
-      qualification: "Ph.D. in English Literature",
-      experience: "18+ years of teaching experience",
-      image: faculty3,
-      bio: "Dr. Anil Verma is renowned for his engaging teaching style that brings literature and history to life. His expertise in language skills development has transformed countless students into confident communicators.",
-      specializations: ["English Literature", "Grammar & Writing", "History", "Public Speaking"],
-      achievements: [
-        "Author of 3 acclaimed educational books",
-        "Literary excellence award recipient",
-        "Debate competition coach - National champions",
-        "100% success in English Board exams"
       ],
-      education: [
-        "Ph.D. in English Literature - JNU",
-        "M.A. in English - Delhi University",
-        "B.A. in English Honours - Hindu College"
-      ]
-    },
-    "4": {
-      name: "Mrs. Sunita Reddy",
-      subject: "Computer Science",
-      qualification: "M.Tech in Computer Science",
-      experience: "10+ years of teaching experience",
-      image: faculty4,
-      bio: "Mrs. Sunita Reddy combines industry experience with academic excellence, preparing students for both examinations and real-world applications. Her modern teaching methods incorporate the latest technology trends.",
-      specializations: ["Programming", "Web Development", "Data Structures", "AI & Machine Learning"],
-      achievements: [
-        "40+ students placed in top tech companies",
-        "Coding competition mentor",
-        "Certified Google Educator",
-        "Best Computer Science Teacher Award"
-      ],
-      education: [
-        "M.Tech in Computer Science - IIIT Hyderabad",
-        "B.Tech in Computer Engineering - NIT Warangal",
-        "Industry certifications in Cloud Computing"
-      ]
+      institutions: ""
     }
   };
 
@@ -136,6 +141,9 @@ const FacultyDetail = () => {
                   <p className="text-primary font-medium text-lg">{faculty.subject}</p>
                   <p className="text-muted-foreground mt-2">{faculty.qualification}</p>
                   <p className="text-muted-foreground font-medium mt-1">{faculty.experience}</p>
+                  {faculty.institutions && (
+                    <p className="text-muted-foreground text-sm mt-2">{faculty.institutions}</p>
+                  )}
                 </div>
                 <Button className="w-full bg-primary hover:bg-primary/90">
                   Contact Faculty

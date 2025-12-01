@@ -1,92 +1,120 @@
-import { Card } from "@/components/ui/card";
-import { Link } from "react-router-dom";
-import faculty1 from "@/assets/faculty-1.jpg";
-import faculty2 from "@/assets/faculty-2.jpg";
-import faculty3 from "@/assets/faculty-3.jpg";
-import faculty4 from "@/assets/faculty-4.jpg";
-import { GraduationCap } from "lucide-react";
+import * as React from 'react';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { BookOpen, GraduationCap } from 'lucide-react';
+import ajayPandey from '@/assets/Ajay Pandey Sir.jpg';
+import kamleshSatani from '@/assets/Kamlesh Satani Sir.jpg';
+import nileshSharma from '@/assets/Nilesh Sharma Sir.jpg';
 
 const Faculty = () => {
-  const facultyMembers = [
+  // Faculty data - first one is Ajay Pandey Sir, second is Kamlesh Satani Sir, third is Nilesh Sharma Sir, fourth is placeholder
+  const faculties = [
     {
       id: "1",
-      name: "Dr. Rajesh Kumar",
-      subject: "Mathematics & Physics",
-      qualification: "Ph.D. in Mathematics, IIT Delhi",
-      experience: "15+ years of teaching experience",
-      image: faculty1,
+      name: "Ajay Pandey Sir",
+      subject: "Physics Expert",
+      experience: "30 years teaching experience",
+      qualification: "M.Sc Physics, MCA, B.Ed.",
+      image: ajayPandey,
+      institutions: "Taught in St. Xavier, Sathya Sai Indore"
     },
     {
       id: "2",
-      name: "Prof. Priya Sharma",
-      subject: "Chemistry & Biology",
-      qualification: "M.Sc. in Chemistry, Delhi University",
-      experience: "12+ years of teaching experience",
-      image: faculty2,
+      name: "Kamlesh Satani Sir",
+      subject: "Mathematics Expert",
+      experience: "15 years teaching experience",
+      qualification: "M.Sc. Mathematics, B.Ed.",
+      image: kamleshSatani,
+      institutions: "Taught in D.P.S. Nepania Indore, Agarwal Public School Indore"
     },
     {
       id: "3",
-      name: "Dr. Anil Verma",
-      subject: "English & Social Science",
-      qualification: "Ph.D. in English Literature",
-      experience: "18+ years of teaching experience",
-      image: faculty3,
+      name: "Nilesh Sharma Sir",
+      subject: "Science Expert",
+      experience: "Currently teaching in DPS",
+      qualification: "Science Faculty",
+      image: nileshSharma,
+      institutions: "Upscale Academy, 3rd floor, Samar Park, Next to Apollo DB City, Gate no. 3, Nipania"
     },
     {
       id: "4",
-      name: "Mrs. Sunita Reddy",
-      subject: "Computer Science",
-      qualification: "M.Tech in Computer Science",
-      experience: "10+ years of teaching experience",
-      image: faculty4,
-    },
+      name: "Our Expert Faculty",
+      subject: "Experienced Educators",
+      experience: "Click to learn more about our teaching team",
+      qualification: "Highly Qualified Professionals"
+    }
   ];
 
   return (
-    <section id="faculty" className="py-16 sm:py-24">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary border border-primary/20 mb-4">
-            <GraduationCap className="h-4 w-4" />
-            <span className="text-sm font-medium">Expert Educators</span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
-            Meet Our <span className="text-primary">Faculty</span>
+    <section className="py-8 bg-gradient-to-b from-white to-orange-50 dark:from-gray-900 dark:to-gray-800" id="faculty">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-5">
+          <h2 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white mb-2">
+            Meet Our <span className="text-orange-600">Expert Faculty</span>
           </h2>
-          <p className="text-lg sm:text-xl text-muted-foreground">
-            Learn from the best. Our experienced educators are passionate about student success.
+          <div className="w-14 h-1 bg-gradient-to-r from-orange-400 to-orange-600 mx-auto rounded-full"></div>
+          <p className="mt-2 text-gray-600 dark:text-gray-300 max-w-md mx-auto text-xs">
+            Our team of experienced educators is dedicated to providing the best learning experience
           </p>
         </div>
-
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-          {facultyMembers.map((member, index) => (
-            <Link 
-              key={index}
-              to={`/faculty/${member.id}`}
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
+          {faculties.map((faculty, index) => (
+            <div 
               className="block"
+              key={faculty.id}
             >
               <Card 
-                className="overflow-hidden hover:shadow-lg transition-all duration-300 border-border hover:border-primary/20 group cursor-pointer"
-                style={{ boxShadow: "var(--shadow-card)" }}
+                className="group overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg border border-orange-100 dark:border-orange-900/30"
               >
-                <div className="relative overflow-hidden">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-secondary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <span className="text-secondary-foreground font-semibold text-lg">View Profile</span>
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex items-end p-2">
+                    <div className="space-y-1">
+                      <div className="flex items-center text-white text-[0.6rem]">
+                        <BookOpen className="h-2.5 w-2.5 mr-1 text-orange-300" />
+                        {faculty.qualification}
+                      </div>
+                      {faculty.institutions && (
+                        <div className="text-white text-[0.55rem]">
+                          {faculty.institutions}
+                        </div>
+                      )}
+                    </div>
                   </div>
+                  {faculty.image ? (
+                    <div className="w-full aspect-[3/4]">
+                      <img 
+                        src={faculty.image} 
+                        alt={faculty.name} 
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  ) : (
+                    <div className="w-full aspect-[3/4] bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center">
+                      <GraduationCap className="h-8 w-8 text-white" />
+                    </div>
+                  )}
                 </div>
-                <div className="p-6 space-y-3">
-                  <h3 className="text-xl font-bold">{member.name}</h3>
-                  <p className="text-primary font-medium">{member.subject}</p>
-                  <p className="text-sm text-muted-foreground">{member.qualification}</p>
-                  <p className="text-sm text-muted-foreground font-medium">{member.experience}</p>
-                </div>
+                
+                <CardHeader className="pb-1">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <CardTitle className="text-xs">{faculty.name}</CardTitle>
+                      <Badge className="mt-1 bg-orange-100 text-orange-700 hover:bg-orange-200 dark:bg-orange-900/30 dark:text-orange-300 dark:hover:bg-orange-900/50 text-[0.55rem]">
+                        {faculty.subject}
+                      </Badge>
+                    </div>
+                  </div>
+                </CardHeader>
+                
+                <CardContent className="pb-1.5">
+                  <div className="flex items-center text-[0.55rem] text-gray-600 dark:text-gray-300 mb-1">
+                    <GraduationCap className="h-2.5 w-2.5 mr-1 text-orange-500" />
+                    {faculty.experience}
+                  </div>
+                </CardContent>
               </Card>
-            </Link>
+            </div>
           ))}
         </div>
       </div>

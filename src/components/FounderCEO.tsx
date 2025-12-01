@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import { GraduationCap, Award, BookOpen, Users } from "lucide-react";
+import { Award, BookOpen, GraduationCap, Users } from "lucide-react";
 import { Button } from "./ui/button";
-import directorImage from "@/assets/Physics Sir.jpg";
+import ceoImage from "@/assets/Nidhi CEO.jpg";
 
 const stats = [
   { icon: <GraduationCap className="h-6 w-6" />, value: "15+ Years", label: "Teaching Experience" },
@@ -10,61 +10,62 @@ const stats = [
   { icon: <Users className="h-6 w-6" />, value: "100%", label: "Student Satisfaction" },
 ];
 
-const DirectorMessage = () => {
+const FounderCEO = () => {
   return (
-    <section className="py-16 bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-800">
+    <section className="py-16 bg-gradient-to-br from-primary/5 to-secondary/5">
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           <motion.div 
-            className="lg:w-1/3"
+            className="lg:w-2/5"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
             <div className="relative">
-              <div className="w-full aspect-square bg-primary/10 rounded-2xl overflow-hidden">
+              <div className="w-full aspect-square bg-primary/10 rounded-2xl overflow-hidden ring-4 ring-primary/20">
                 <img 
-                  src={directorImage} 
-                  alt="Dr. Rajesh Kumar" 
+                  src={ceoImage} 
+                  alt="Dr. Nidhi Shukla" 
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-background p-4 rounded-xl shadow-lg border">
                 <div className="text-center">
-                  <h4 className="font-bold">Dr. Rajesh Kumar</h4>
-                  <p className="text-sm text-muted-foreground">Founder & Director</p>
+                  <h4 className="font-bold">Dr. Nidhi Shukla</h4>
+                  <p className="text-sm text-muted-foreground">Founder & CEO</p>
                 </div>
               </div>
             </div>
           </motion.div>
 
           <motion.div 
-            className="lg:w-2/3 space-y-6"
+            className="lg:w-3/5 space-y-6"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div className="inline-block px-4 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-2">
-              Director's Message
+              Founder's Message
             </div>
             <h2 className="text-3xl md:text-4xl font-bold leading-tight">
-              Empowering Students to Achieve <span className="text-primary">Academic Excellence</span>
+              Transforming Education Through <span className="text-primary">Innovation & Excellence</span>
             </h2>
             
             <div className="space-y-4 text-muted-foreground">
               <p>
-                Welcome to Upscale Tuition, where we believe in nurturing young minds and helping them reach their full potential. 
-                With over 15 years of experience in education, I've dedicated my career to creating an environment that fosters 
-                learning, critical thinking, and personal growth.
+                As the founder and CEO of Upscale Tuition, I envisioned an institution where every student receives personalized attention 
+                and the highest quality education. With over 15 years of experience in transforming young minds, I've built a team 
+                of exceptional educators who share this vision.
               </p>
               <p>
-                Our team of expert educators is committed to providing personalized attention and guidance to each student, 
-                ensuring they not only excel academically but also develop the skills and confidence needed for lifelong success.
+                Our approach goes beyond traditional teaching methods. We focus on nurturing critical thinking, creativity, and 
+                problem-solving skills that prepare our students not just for exams, but for life's challenges.
               </p>
               <p>
-                At Upscale, we don't just teach subjects - we inspire a love for learning that lasts a lifetime.
+                At Upscale, we don't just teach subjects - we shape futures. Every student who walks through our doors becomes 
+                part of our extended family, and we're committed to helping them achieve their dreams.
               </p>
             </div>
 
@@ -90,7 +91,7 @@ const DirectorMessage = () => {
               whileTap={{ scale: 0.98 }}
             >
               <Button className="mt-6 text-lg h-12 px-6">
-                Book a Free Counseling Session
+                Book a Free Consultation
               </Button>
             </motion.div>
           </motion.div>
@@ -100,4 +101,4 @@ const DirectorMessage = () => {
   );
 };
 
-export default DirectorMessage;
+export default FounderCEO;

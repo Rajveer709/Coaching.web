@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
-import DirectorMessage from "@/components/DirectorMessage";
+import FounderCEO from "@/components/FounderCEO";
 import Infrastructure from "@/components/Infrastructure";
 import Faculty from "@/components/Faculty";
 import Testimonials from "@/components/Testimonials";
@@ -25,15 +25,17 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen flex flex-col">
       <Header />
-      <main>
+      <main className="flex-grow">
         <Hero />
         <About id="about" />
-        <DirectorMessage />
-        <Infrastructure />
+        <FounderCEO />
         <Faculty />
-        <Testimonials />
+        <Infrastructure />
+        <div id="testimonials">
+          <Testimonials />
+        </div>
         <Contact id="contact" />
       </main>
       <Footer />

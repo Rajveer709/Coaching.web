@@ -11,7 +11,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center pt-16 sm:pt-20 overflow-hidden">
+    <section className="relative min-h-screen flex items-center pt-16 overflow-hidden">
       {/* Background Image with Overlay */}
       <div 
         className="absolute inset-0 z-0"
@@ -26,9 +26,9 @@ const Hero = () => {
       
       {/* Animated Floating Elements */}
       <motion.div 
-        className="absolute top-1/4 left-1/4 w-4 h-4 rounded-full bg-primary/30"
+        className="absolute top-1/4 left-1/4 w-3 h-3 rounded-full bg-primary/30"
         animate={{
-          y: [0, 20, 0],
+          y: [0, 15, 0],
           opacity: [0.5, 1, 0.5],
         }}
         transition={{
@@ -38,9 +38,9 @@ const Hero = () => {
         }}
       />
       <motion.div 
-        className="absolute top-1/3 right-1/3 w-6 h-6 rounded-full bg-secondary/30"
+        className="absolute top-1/3 right-1/3 w-4 h-4 rounded-full bg-secondary/30"
         animate={{
-          y: [10, -10, 10],
+          y: [8, -8, 8],
           opacity: [0.3, 0.7, 0.3],
         }}
         transition={{
@@ -51,10 +51,10 @@ const Hero = () => {
         }}
       />
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="max-w-4xl">
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-3xl">
           <motion.div
-            className="space-y-6 sm:space-y-8 text-left"
+            className="space-y-5 text-left"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -65,25 +65,25 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
             >
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary border border-primary/20 backdrop-blur-sm">
-                <Sparkles className="h-4 w-4" />
-                <span className="text-sm font-medium">Excellence in Education</span>
+              <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary border border-primary/20 backdrop-blur-sm">
+                <Sparkles className="h-3.5 w-3.5" />
+                <span className="text-xs font-medium">Excellence in Education</span>
               </span>
             </motion.div>
 
-            <div className="flex items-center justify-start gap-3 mb-4">
+            <div className="flex items-center justify-start gap-2.5 mb-3">
               <img 
                 src={upscaleLogo} 
                 alt="Upscale Tuition" 
-                className="h-16 sm:h-20 w-auto"
+                className="h-12 sm:h-14 w-auto"
               />
-              <span className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+              <span className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
                 Upscale Tuition
               </span>
             </div>
 
             <motion.h1 
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight"
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.8 }}
@@ -93,7 +93,7 @@ const Hero = () => {
             </motion.h1>
 
             <motion.p 
-              className="text-lg sm:text-xl text-muted-foreground leading-relaxed"
+              className="text-base sm:text-lg text-muted-foreground leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
@@ -102,7 +102,7 @@ const Hero = () => {
             </motion.p>
 
             <motion.div
-              className="flex flex-col sm:flex-row gap-4 justify-start"
+              className="flex flex-col sm:flex-row gap-3 justify-start"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.8 }}
@@ -113,11 +113,11 @@ const Hero = () => {
                 className="inline-block"
               >
                 <Button 
-                  className="bg-primary hover:bg-primary/90 text-lg group"
+                  className="bg-primary hover:bg-primary/90 text-base group h-10"
                   onClick={scrollToContact}
                 >
                 Get Started
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </motion.div>
               
@@ -129,7 +129,7 @@ const Hero = () => {
                 <Button 
                   variant="outline"
                   onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
-                  className="text-lg border-primary/20 hover:bg-primary/5 group"
+                  className="text-base border-primary/20 hover:bg-primary/5 group h-10"
                 >
                 Learn More
                 </Button>
@@ -138,31 +138,31 @@ const Hero = () => {
 
             {/* Stats */}
             <motion.div
-              className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-4 pt-8 border-t border-border max-w-2xl"
+              className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 border-t border-border max-w-xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.8 }}
             >
-              <div className="space-y-2 text-left">
-                <div className="flex items-center justify-start gap-2 text-primary">
-                  <BookOpen className="h-6 w-6" />
-                  <p className="text-3xl sm:text-4xl font-bold">15+</p>
+              <div className="space-y-1.5 text-left">
+                <div className="flex items-center justify-start gap-1.5 text-primary">
+                  <BookOpen className="h-5 w-5" />
+                  <p className="text-2xl sm:text-3xl font-bold">15+</p>
                 </div>
-                <p className="text-sm text-muted-foreground">Courses</p>
+                <p className="text-xs text-muted-foreground">Courses</p>
               </div>
-              <div className="space-y-2 text-left">
-                <div className="flex items-center justify-start gap-2 text-primary">
-                  <Users className="h-6 w-6" />
-                  <p className="text-3xl sm:text-4xl font-bold">500+</p>
+              <div className="space-y-1.5 text-left">
+                <div className="flex items-center justify-start gap-1.5 text-primary">
+                  <Users className="h-5 w-5" />
+                  <p className="text-2xl sm:text-3xl font-bold">500+</p>
                 </div>
-                <p className="text-sm text-muted-foreground">Students</p>
+                <p className="text-xs text-muted-foreground">Students</p>
               </div>
-              <div className="space-y-2 text-left">
-                <div className="flex items-center justify-start gap-2 text-primary">
-                  <Award className="h-6 w-6" />
-                  <p className="text-3xl sm:text-4xl font-bold">98%</p>
+              <div className="space-y-1.5 text-left">
+                <div className="flex items-center justify-start gap-1.5 text-primary">
+                  <Award className="h-5 w-5" />
+                  <p className="text-2xl sm:text-3xl font-bold">98%</p>
                 </div>
-                <p className="text-sm text-muted-foreground">Success Rate</p>
+                <p className="text-xs text-muted-foreground">Success Rate</p>
               </div>
             </motion.div>
           </motion.div>

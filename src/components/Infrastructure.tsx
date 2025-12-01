@@ -2,27 +2,31 @@ import { motion } from "framer-motion";
 import { Building2, Wifi, BookOpen, MonitorPlay, ChevronRight, ChevronLeft } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { useState } from "react";
+import campus1 from "@/assets/Campus-1.png";
+import campus2 from "@/assets/Campus-2.png";
+import campus3 from "@/assets/Campus-3.png";
+import campus4 from "@/assets/Campus-4.png";
 
 const infrastructureImages = [
   {
     id: 1,
-    alt: "Modern classroom with smart board",
-    src: "/images/classroom.jpg"
+    alt: "Campus View 1",
+    src: campus1
   },
   {
     id: 2,
-    alt: "Well-equipped science laboratory",
-    src: "/images/lab.jpg"
+    alt: "Campus View 2",
+    src: campus2
   },
   {
     id: 3,
-    alt: "Computer lab with latest technology",
-    src: "/images/computer-lab.jpg"
+    alt: "Campus View 3",
+    src: campus3
   },
   {
     id: 4,
-    alt: "School library with study spaces",
-    src: "/images/library.jpg"
+    alt: "Campus View 4",
+    src: campus4
   }
 ];
 
@@ -66,18 +70,32 @@ const item = {
 };
 
 const Infrastructure = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextImage = () => {
+    setCurrentIndex((prevIndex) => 
+      prevIndex === infrastructureImages.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const prevImage = () => {
+    setCurrentIndex((prevIndex) => 
+      prevIndex === 0 ? infrastructureImages.length - 1 : prevIndex - 1
+    );
+  };
+
   return (
-    <section className="py-16 bg-slate-50 dark:bg-slate-900">
+    <section className="py-12 bg-slate-50 dark:bg-slate-900">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-12"
+          className="text-center mb-8"
         >
-          <h2 className="text-4xl font-bold mb-4">Our Infrastructure</h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <h2 className="text-3xl font-bold mb-3">Our Infrastructure</h2>
+          <p className="text-base text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             We provide state-of-the-art facilities designed to enhance the learning experience and foster academic excellence.
           </p>
         </motion.div>
@@ -87,19 +105,19 @@ const Infrastructure = () => {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
         >
           {infrastructureItems.map((facility, index) => (
             <motion.div key={index} variants={item}>
               <Card className="h-full hover:shadow-lg transition-shadow duration-300">
                 <CardHeader>
-                  <div className="p-3 bg-primary/10 rounded-full w-fit mb-4">
+                  <div className="p-2 bg-primary/10 rounded-full w-fit mb-3">
                     {facility.icon}
                   </div>
-                  <CardTitle className="text-xl">{facility.title}</CardTitle>
+                  <CardTitle className="text-lg">{facility.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600 dark:text-gray-300">{facility.description}</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-300">{facility.description}</p>
                 </CardContent>
               </Card>
             </motion.div>
@@ -107,33 +125,59 @@ const Infrastructure = () => {
         </motion.div>
 
         {/* Image Gallery */}
-        <div className="mt-16">
+        <div className="mt-12">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="relative bg-gray-100 dark:bg-gray-800 rounded-xl p-8"
+            className="relative bg-gray-100 dark:bg-gray-800 rounded-lg p-6"
           >
-            <h3 className="text-2xl font-bold mb-6 text-center">Campus Gallery</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {infrastructureImages.map((image) => (
-                <div 
-                  key={image.id}
-                  className="aspect-square bg-gray-200 dark:bg-gray-700 rounded-lg overflow-hidden relative group"
-                >
-                  <div className="absolute inset-0 bg-primary/10 flex items-center justify-center">
-                    <span className="text-sm text-gray-500">Image: {image.alt}</span>
+            <h3 className="text-xl font-bold mb-4 text-center">Campus Gallery</h3>
+            <div className="relative overflow-hidden rounded-lg">
+              <div 
+                className="flex transition-transform duration-500 ease-in-out"
+                style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+              >
+                {infrastructureImages.map((image) => (
+                  <div 
+                    key={image.id}
+                    className="min-w-full aspect-video rounded-lg overflow-hidden relative group"
+                  >
+                    <img 
+                      src={image.src} 
+                      alt={image.alt}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-            <div className="flex justify-center mt-6 gap-4">
-              <button className="p-2 rounded-full bg-white dark:bg-gray-700 shadow-md hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors">
-                <ChevronLeft className="h-5 w-5" />
+            <div className="flex justify-center mt-4 gap-3">
+              <button 
+                onClick={prevImage}
+                className="p-1.5 rounded-full bg-white dark:bg-gray-700 shadow-md hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors"
+              >
+                <ChevronLeft className="h-4 w-4" />
               </button>
-              <button className="p-2 rounded-full bg-white dark:bg-gray-700 shadow-md hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors">
-                <ChevronRight className="h-5 w-5" />
+              <div className="flex items-center gap-1.5">
+                {infrastructureImages.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentIndex(index)}
+                    className={`w-2.5 h-2.5 rounded-full transition-colors ${
+                      index === currentIndex 
+                        ? 'bg-primary' 
+                        : 'bg-gray-300 dark:bg-gray-600'
+                    }`}
+                  />
+                ))}
+              </div>
+              <button 
+                onClick={nextImage}
+                className="p-1.5 rounded-full bg-white dark:bg-gray-700 shadow-md hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors"
+              >
+                <ChevronRight className="h-4 w-4" />
               </button>
             </div>
           </motion.div>
