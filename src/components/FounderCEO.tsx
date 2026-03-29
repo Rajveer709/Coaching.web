@@ -4,7 +4,7 @@ import { Button } from "./ui/button";
 import ceoImage from "@/assets/Nidhi CEO.jpg";
 
 const stats = [
-  { icon: <GraduationCap className="h-6 w-6" />, value: "15+ Years", label: "Teaching Experience" },
+  { icon: <GraduationCap className="h-6 w-6" />, value: "20+ Years", label: "Teaching Experience" },
   { icon: <Award className="h-6 w-6" />, value: "500+", label: "Students Mentored" },
   { icon: <BookOpen className="h-6 w-6" />, value: "10+", label: "Research Papers" },
   { icon: <Users className="h-6 w-6" />, value: "100%", label: "Student Satisfaction" },
@@ -55,8 +55,8 @@ const FounderCEO = () => {
             
             <div className="space-y-4 text-muted-foreground">
               <p>
-                As the founder and CEO of Upscale Tuition, I envisioned an institution where every student receives personalized attention 
-                and the highest quality education. With over 15 years of experience in transforming young minds, I've built a team 
+                As the founder and CEO of Upscale Academy, I envisioned an institution where every student receives personalized attention 
+                and the highest quality education. With over 20 years of experience in transforming young minds, I've built a team 
                 of exceptional educators who share this vision.
               </p>
               <p>

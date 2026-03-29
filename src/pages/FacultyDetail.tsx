@@ -4,12 +4,10 @@ import { Card } from "@/components/ui/card";
 import { ArrowLeft, GraduationCap, Award, BookOpen, Star } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import faculty1 from "@/assets/faculty-1.jpg";
-import faculty2 from "@/assets/faculty-2.jpg";
-import faculty3 from "@/assets/faculty-3.jpg";
-import faculty4 from "@/assets/faculty-4.jpg";
+import faculty1 from "@/assets/Nidhi CEO.jpg";
+import faculty2 from "@/assets/Nilesh Sharma Sir.jpg";
+import faculty4 from "@/assets/Amber Arora Sir.jpg";
 import ajayPandey from "@/assets/Ajay Pandey Sir.jpg";
-import kamleshSatani from "@/assets/Kamlesh Satani Sir.jpg";
 
 const FacultyDetail = () => {
   const { id } = useParams();
@@ -35,26 +33,6 @@ const FacultyDetail = () => {
         "B.Ed. (Bachelor of Education)"
       ],
       institutions: "Taught in St. Xavier, Sathya Sai Indore"
-    },
-    "2": {
-      name: "Kamlesh Satani Sir",
-      subject: "Mathematics Expert",
-      qualification: "M.Sc. Mathematics, B.Ed.",
-      experience: "15 years teaching experience",
-      image: kamleshSatani,
-      bio: "Kamlesh Satani Sir is an accomplished mathematics educator with extensive experience in making complex mathematical concepts understandable and engaging for students. His teaching methodology focuses on building strong foundational knowledge while fostering problem-solving skills.",
-      specializations: ["Mathematics", "Algebra", "Calculus", "Exam Preparation"],
-      achievements: [
-        "15+ years of dedicated teaching career",
-        "Taught at D.P.S. Nepania Indore and Agarwal Public School Indore",
-        "Consistently high student performance in board examinations",
-        "Recognized for innovative teaching approaches"
-      ],
-      education: [
-        "M.Sc. Mathematics",
-        "B.Ed. (Bachelor of Education)"
-      ],
-      institutions: "Taught in D.P.S. Nepania Indore, Agarwal Public School Indore"
     },
     "3": {
       name: "Dr. Rajesh Kumar",

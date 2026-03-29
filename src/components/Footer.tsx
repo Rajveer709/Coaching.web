@@ -1,4 +1,4 @@
-import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, Clock } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Mail, Phone, MapPin, Clock } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
@@ -9,26 +9,26 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* About Section */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold text-white">Upscale Tuition</h3>
+            <h3 className="text-2xl font-bold text-white">Upscale Academy</h3>
             <p className="text-gray-300">
               Empowering students with quality education, expert guidance, and a passion for learning that lasts a lifetime.
             </p>
             <div className="space-y-2">
               <div className="flex items-start">
                 <MapPin className="h-5 w-5 mt-1 text-primary flex-shrink-0 mr-2" />
-                <span className="text-gray-300">123 Education St, Learning District, 400001</span>
+                <span className="text-gray-300">Upscale Academy, 3rd floor, Samar Park, Next to Apollo DB City, Gate no. 3, Nipania</span>
               </div>
               <div className="flex items-center">
                 <Phone className="h-5 w-5 text-primary mr-2" />
-                <a href="tel:+911234567890" className="text-gray-300 hover:text-white">+91 12345 67890</a>
+                <a href="tel:+918770696706" className="text-gray-300 hover:text-white">+91 87706 96706</a>
               </div>
               <div className="flex items-center">
                 <Mail className="h-5 w-5 text-primary mr-2" />
-                <a href="mailto:info@upscaletuition.com" className="text-gray-300 hover:text-white">info@upscaletuition.com</a>
+                <a href="mailto:upscale.edu@gmail.com" className="text-gray-300 hover:text-white">upscale.edu@gmail.com</a>
               </div>
               <div className="flex items-center">
                 <Clock className="h-5 w-5 text-primary mr-2" />
-                <span className="text-gray-300">Mon-Sat: 8:00 AM - 8:00 PM</span>
+                <span className="text-gray-300">Mon - Sat: 10:00 AM - 8:00 PM</span>
               </div>
             </div>
           </div>
@@ -70,14 +70,15 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4 text-white">Follow Us</h4>
             <div className="flex space-x-4 mb-6">
               {[
-                { icon: <Facebook className="h-5 w-5" />, name: 'Facebook', link: '#' },
-                { icon: <Twitter className="h-5 w-5" />, name: 'Twitter', link: '#' },
-                { icon: <Instagram className="h-5 w-5" />, name: 'Instagram', link: '#' },
+                { icon: <Facebook className="h-5 w-5" />, name: 'Facebook', link: 'https://www.facebook.com/share/1GkuL1yUC9/' },
+                { icon: <Instagram className="h-5 w-5" />, name: 'Instagram', link: 'https://www.instagram.com/upscaleeducation?igsh=ZzIxcmZubmxwMDd1' },
                 { icon: <Linkedin className="h-5 w-5" />, name: 'LinkedIn', link: '#' }
               ].map((social, index) => (
                 <motion.a
                   key={social.name}
                   href={social.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-gray-900 h-10 w-10 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
                   whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.95 }}
@@ -96,16 +97,12 @@ const Footer = () => {
               <h5 className="font-medium text-white mb-2">Opening Hours</h5>
               <div className="space-y-1 text-sm">
                 <div className="flex justify-between">
-                  <span className="text-gray-300">Monday - Friday</span>
-                  <span className="text-white">8:00 AM - 8:00 PM</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-300">Saturday</span>
-                  <span className="text-white">9:00 AM - 6:00 PM</span>
+                  <span className="text-gray-300">Monday - Saturday</span>
+                  <span className="text-white">10:00 AM - 8:00 PM</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-300">Sunday</span>
-                  <span className="text-red-400">Closed</span>
+                  <span className="text-white">12:00 PM - 4:00 PM</span>
                 </div>
               </div>
             </div>
@@ -115,7 +112,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="border-t border-gray-800 mt-12 pt-8 text-center">
           <p className="text-sm text-gray-400">
-            &copy; {new Date().getFullYear()} Upscale Tuition. All rights reserved.
+            &copy; {new Date().getFullYear()} Upscale Academy. All rights reserved.
           </p>
         </div>
       </div>

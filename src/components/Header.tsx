@@ -42,7 +42,7 @@ const Header = () => {
             <Link to="/" onClick={goToTop}>
               <img 
                 src={upscaleLogo} 
-                alt="Upscale Tuition Logo" 
+                alt="Upscale Academy Logo" 
                 className="h-8 sm:h-10 w-auto"
               />
             </Link>

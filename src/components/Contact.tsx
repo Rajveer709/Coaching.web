@@ -32,22 +32,22 @@ const Contact = ({ id }: ContactProps) => {
     {
       icon: MapPin,
       title: "Visit Us",
-      details: ["123 Education Street", "Delhi, India - 110001"],
+      details: ["Upscale Academy, 3rd floor, Samar Park", "Next to Apollo DB City, Gate no. 3, Nipania"],
     },
     {
       icon: Phone,
       title: "Call Us",
-      details: ["+91 98765 43210", "+91 87654 32109"],
+      details: ["+91 87706 96706", "+91 98264 34243"],
     },
     {
       icon: Mail,
       title: "Email Us",
-      details: ["info@upscaletuition.com", "admissions@upscaletuition.com"],
+      details: ["upscale.edu@gmail.com", "upscale.edu@gmail.com"],
     },
     {
       icon: Clock,
       title: "Working Hours",
-      details: ["Mon - Sat: 8:00 AM - 8:00 PM", "Sunday: 9:00 AM - 2:00 PM"],
+      details: ["Mon - Sat: 10:00 AM - 8:00 PM", "Sunday: 12:00 PM - 4:00 PM"],
     },
   ];
 

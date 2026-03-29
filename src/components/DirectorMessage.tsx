@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { GraduationCap, Award, BookOpen, Users } from "lucide-react";
 import { Button } from "./ui/button";
-import directorImage from "@/assets/Physics Sir.jpg";
+import directorImage from "@/assets/Nidhi CEO.jpg";
 
 const stats = [
   { icon: <GraduationCap className="h-6 w-6" />, value: "15+ Years", label: "Teaching Experience" },
@@ -55,7 +55,7 @@ const DirectorMessage = () => {
             
             <div className="space-y-4 text-muted-foreground">
               <p>
-                Welcome to Upscale Tuition, where we believe in nurturing young minds and helping them reach their full potential. 
+                Welcome to Upscale Academy, where we believe in nurturing young minds and helping them reach their full potential. 
                 With over 15 years of experience in education, I've dedicated my career to creating an environment that fosters 
                 learning, critical thinking, and personal growth.
               </p>

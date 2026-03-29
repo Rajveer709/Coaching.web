@@ -8,7 +8,7 @@ import Faculty from "@/components/Faculty";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
-import SecretFeature from "@/components/SecretFeature";
+import MessageSystem from "@/components/MessageSystem";
 
 const Index = () => {
   // Add smooth scroll behavior for anchor links
@@ -39,7 +39,7 @@ const Index = () => {
         <Contact id="contact" />
       </main>
       <Footer />
-      <SecretFeature />
+      <MessageSystem />
     </div>
   );
 };
