@@ -1,33 +1,11 @@
 import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
-import { useState } from "react";
-import { useToast } from "@/hooks/use-toast";
 
 interface ContactProps {
   id?: string;
 }
 
 const Contact = ({ id }: ContactProps) => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
-  const { toast } = useToast();
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast({
-      title: "Message Sent!",
-      description: "We'll get back to you soon.",
-    });
-    setFormData({ name: "", email: "", phone: "", message: "" });
-  };
-
   const contactInfo = [
     {
       icon: MapPin,
@@ -63,80 +41,28 @@ const Contact = ({ id }: ContactProps) => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
-          {/* Contact Form */}
-          <Card className="p-6 sm:p-8" style={{ boxShadow: "var(--shadow-card)" }}>
-            <h3 className="text-2xl font-bold mb-6">Send us a Message</h3>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label className="block text-sm font-medium mb-2">Name</label>
-                <Input
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  placeholder="Enter your name"
-                  required
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium mb-2">Email</label>
-                <Input
-                  type="email"
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  placeholder="Enter your email"
-                  required
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium mb-2">Phone</label>
-                <Input
-                  type="tel"
-                  value={formData.phone}
-                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  placeholder="Enter your phone number"
-                  required
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium mb-2">Message</label>
-                <Textarea
-                  value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  placeholder="Tell us how we can help..."
-                  rows={4}
-                  required
-                />
-              </div>
-              <Button type="submit" className="w-full bg-primary hover:bg-primary/90">
-                Send Message
-              </Button>
-            </form>
-          </Card>
-
-          {/* Contact Information */}
-          <div className="space-y-6">
-            {contactInfo.map((info, index) => (
-              <Card 
-                key={index}
-                className="p-6 hover:shadow-lg transition-all duration-300 border-border hover:border-primary/20"
-                style={{ boxShadow: "var(--shadow-card)" }}
-              >
-                <div className="flex items-start gap-4">
-                  <div className="inline-flex p-3 rounded-lg bg-primary/10 flex-shrink-0">
-                    <info.icon className="h-6 w-6 text-primary" />
-                  </div>
-                  <div className="flex-1">
-                    <h4 className="text-lg font-semibold mb-2">{info.title}</h4>
-                    {info.details.map((detail, idx) => (
-                      <p key={idx} className="text-muted-foreground">
-                        {detail}
-                      </p>
-                    ))}
-                  </div>
+        <div className="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-4xl mx-auto">
+          {contactInfo.map((info, index) => (
+            <Card 
+              key={index}
+              className="p-6 hover:shadow-lg transition-all duration-300 border-border hover:border-primary/20"
+              style={{ boxShadow: "var(--shadow-card)" }}
+            >
+              <div className="flex items-start gap-4">
+                <div className="inline-flex p-3 rounded-lg bg-primary/10 flex-shrink-0">
+                  <info.icon className="h-6 w-6 text-primary" />
                 </div>
-              </Card>
-            ))}
-          </div>
+                <div className="flex-1">
+                  <h4 className="text-lg font-semibold mb-2">{info.title}</h4>
+                  {info.details.map((detail, idx) => (
+                    <p key={idx} className="text-muted-foreground">
+                      {detail}
+                    </p>
+                  ))}
+                </div>
+              </div>
+            </Card>
+          ))}
         </div>
       </div>
     </section>

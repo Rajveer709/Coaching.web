@@ -43,9 +43,7 @@ const Footer = () => {
                 { name: 'Our Faculty', link: '/#faculty' },
                 { name: 'Courses', link: '/courses' },
                 { name: 'Testimonials', link: '/#testimonials' },
-                { name: 'Contact Us', link: '/#contact' },
-                { name: 'Blog', link: '#' },
-                { name: 'FAQ', link: '#' }
+                { name: 'Contact Us', link: '/#contact' }
               ].map((item, index) => (
                 <motion.li 
                   key={item.name}
